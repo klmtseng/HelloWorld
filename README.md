@@ -26,7 +26,7 @@ HelloWorld 是一個可快速擴充的範本專案，目標是提供乾淨、可
    ```
 3. 開啟瀏覽器
    ```text
-   http://localhost:8000/src/
+   http://localhost:8000/
    ```
 
 ## 如何在本機啟動
@@ -69,10 +69,10 @@ HelloWorld/
 4. 儲存後，等待 GitHub Pages 建置完成。
 5. 造訪網站：
    ```text
-   https://<your-username>.github.io/<repo-name>/src/
+   https://<your-username>.github.io/<repo-name>/
    ```
 
-> 若你希望網址不帶 `/src/`，可將靜態入口移至根目錄（例如 `index.html` 放在專案 root）後再部署。
+> 專案根目錄的 `index.html` 會自動導向 `src/` 首頁，因此可直接以根路徑部署與存取。
 
 ## 其他靜態託管選項
 - **Netlify**：連接 GitHub repo 後直接部署，Build command 留空、Publish directory 設為 `src`。
