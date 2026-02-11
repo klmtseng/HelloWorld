@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>導向作品集首頁</title>
+    <meta http-equiv="refresh" content="0; url=./src/" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+        background: #f5f7fb;
+        color: #1f2a44;
+      }
+
+      .card {
+        width: min(560px, 92vw);
+        background: #fff;
+        border: 1px solid #dde3f0;
+        border-radius: 14px;
+        padding: 1.2rem 1.4rem;
+        box-shadow: 0 8px 24px rgba(31, 42, 68, 0.08);
+      }
+
+      a {
+        color: #3f6df6;
+        font-weight: 700;
+      }
+    </style>
+    <script>
+      window.location.replace('./src/');
+    </script>
+  </head>
+  <body>
+    <main class="card">
+      <h1>正在前往作品集首頁…</h1>
+      <p>
+        若未自動跳轉，請點擊
+        <a href="./src/">這裡開啟首頁</a>。
+      </p>
+    </main>
+  </body>
+</html>

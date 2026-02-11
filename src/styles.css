@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --muted: #5d6780;
+  --primary: #3f6df6;
+  --border: #dde3f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero,
+main,
+footer {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 3rem 0 1rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--card);
+  box-shadow: 0 8px 20px rgba(46, 72, 140, 0.15);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(63, 109, 246, 0.12);
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 0.55rem 0;
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+}
+
+.skills,
+.contact {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fcfdff;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3,
+.project-card p {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  padding-top: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .skills,
+  .contact {
+    text-align: left;
+  }
+}
