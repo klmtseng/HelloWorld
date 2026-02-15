@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>個人作品集首頁</title>
+    <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img src="./src/assets/avatar.svg" alt="個人頭像" class="avatar" />
+      <div>
+        <p class="tag">Front-end Portfolio</p>
+        <h1>你好，我是 Alex</h1>
+        <p class="intro">
+          我是專注於互動體驗與效能優化的前端工程師，喜歡把複雜需求轉化成清晰好用的介面。
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>技能</h2>
+        <ul class="skills">
+          <li>HTML5 / Semantics</li>
+          <li>CSS3 / RWD / Animation</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React + Vite</li>
+          <li>GitHub Actions / CI</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>作品列表</h2>
+        <div class="projects">
+          <article class="project-card">
+            <img src="./src/assets/project-1.svg" alt="作品一截圖" />
+            <h3>專案一：任務管理平台</h3>
+            <p>支援拖拉排序、即時搜尋與資料圖表化，提升團隊協作效率。</p>
+          </article>
+          <article class="project-card">
+            <img src="./src/assets/project-2.svg" alt="作品二截圖" />
+            <h3>專案二：電商前台改版</h3>
+            <p>重構商品頁與結帳流程，將行動版轉換率提升 18%。</p>
+          </article>
+          <article class="project-card">
+            <img src="./src/assets/project-3.svg" alt="作品三截圖" />
+            <h3>專案三：技術部落格模板</h3>
+            <p>打造可重用元件與 Markdown 渲染流程，簡化內容維護成本。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>研究 / 架構紀錄</h2>
+          <button id="open-builder" class="btn-primary" type="button">+ 新增紀錄（半自動）</button>
+        </div>
+        <p class="hint">目前已先放入 3 筆範例供你檢視效果；可再用下方模板直接貼上內容，或按「新增紀錄」以選項式填寫。</p>
+
+        <h3>可複製模板（Markdown）</h3>
+        <textarea id="entry-template" class="template-box" readonly></textarea>
+        <div class="actions-inline">
+          <button id="copy-template" class="btn-secondary" type="button">複製模板</button>
+          <span id="copy-state" class="copy-state" aria-live="polite"></span>
+        </div>
+
+        <div id="entry-list" class="entry-list"></div>
+      </section>
+
+      <section>
+        <h2>聯絡方式</h2>
+        <ul class="contact">
+          <li>Email：alex.portfolio@example.com</li>
+          <li>GitHub：github.com/alex-portfolio</li>
+          <li>LinkedIn：linkedin.com/in/alex-portfolio</li>
+        </ul>
+      </section>
+    </main>
+
+    <dialog id="entry-builder" class="builder-dialog">
+      <form id="entry-form" method="dialog" class="builder-form">
+        <header>
+          <h3>新增研究 / 架構紀錄</h3>
+          <p>依序選擇與填寫，送出後會自動加到首頁。</p>
+        </header>
+
+        <label>
+          類型
+          <select name="type" required>
+            <option value="研究">研究</option>
+            <option value="架構">架構</option>
+            <option value="實驗">實驗</option>
+          </select>
+        </label>
+
+        <label>
+          標題
+          <input name="title" type="text" placeholder="例如：多租戶系統授權模型" required />
+        </label>
+
+        <label>
+          背景 / 問題
+          <textarea name="problem" rows="3" required></textarea>
+        </label>
+
+        <label>
+          核心決策（可條列）
+          <textarea name="decision" rows="3" required></textarea>
+        </label>
+
+        <label>
+          技術標籤（逗號分隔）
+          <input name="tags" type="text" placeholder="DDD, RBAC, PostgreSQL" />
+        </label>
+
+        <label>
+          連結（選填）
+          <input name="link" type="url" placeholder="https://..." />
+        </label>
+
+        <menu>
+          <button type="button" value="cancel" id="cancel-builder">取消</button>
+          <button type="submit" value="default" class="btn-primary">加入首頁</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <footer>
+      <small>© <span id="year"></span> Alex Portfolio</small>
+    </footer>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
