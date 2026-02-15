@@ -81,6 +81,14 @@ section {
   padding: 1.1rem 1.2rem;
 }
 
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
 .skills,
 .contact {
   margin: 0;
@@ -113,9 +121,145 @@ section {
   padding: 0.75rem 0.9rem;
 }
 
-.project-card p {
+.project-card p,
+.hint {
   color: var(--muted);
+}
+
+.project-card p {
   padding-top: 0;
+}
+
+.template-box {
+  width: 100%;
+  min-height: 190px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: #f9fbff;
+}
+
+.actions-inline {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.entry-list {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.entry-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #fcfdff;
+}
+
+.entry-card h4 {
+  margin: 0;
+}
+
+.entry-meta {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tags {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags span {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(63, 109, 246, 0.1);
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.builder-form button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #eef3ff;
+  color: var(--primary);
+}
+
+.copy-state {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.builder-dialog {
+  width: min(640px, 94vw);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+}
+
+.builder-dialog::backdrop {
+  background: rgba(24, 34, 60, 0.45);
+}
+
+.builder-form {
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.builder-form header h3,
+.builder-form header p {
+  margin: 0;
+}
+
+.builder-form header p {
+  color: var(--muted);
+}
+
+.builder-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+.builder-form input,
+.builder-form select,
+.builder-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem;
+  font: inherit;
+  font-weight: 400;
+}
+
+.builder-form menu {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
 }
 
 footer {

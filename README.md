@@ -34,12 +34,19 @@ HelloWorld 是一個可快速擴充的範本專案，目標是提供乾淨、可
 python3 -m http.server 8000
 ```
 
+## 研究/架構模板與半自動化輸入
+首頁提供兩種更新方式：
+- **模板貼上**：可直接複製「可複製模板（Markdown）」區塊，將新研究或架構內容依欄位補齊後保存。
+- **選項式輸入**：點擊「新增紀錄（半自動）」會開啟獨立對話視窗，依序選擇類型、輸入標題/問題/決策/標籤，送出後自動加載到首頁。
+
+> 新增的紀錄會存放在瀏覽器 `localStorage`，重新整理頁面後仍可保留（同一瀏覽器/同一裝置）。
+
 ## 如何執行測試
 > 目前為靜態網站，暫無自動化測試；可先用基本檢查確認檔案完整。
 
 ```bash
 # 檢查首頁檔案是否存在
-test -f src/index.html
+test -f index.html && test -f src/main.js
 ```
 
 ## 目錄結構
@@ -75,8 +82,8 @@ HelloWorld/
 > 專案根目錄的 `index.html` 為正式首頁，並透過 `./src/` 內的樣式與素材載入內容。
 
 ## 其他靜態託管選項
-- **Netlify**：連接 GitHub repo 後直接部署，Build command 留空、Publish directory 設為 `src`。
-- **Cloudflare Pages**：匯入 GitHub repo，Build command 留空、Output directory 設為 `src`。
+- **Netlify**：連接 GitHub repo 後直接部署，Build command 留空、Publish directory 設為專案 root（預設）。
+- **Cloudflare Pages**：匯入 GitHub repo，Build command 留空、Output directory 設為專案 root（預設）。
 
 ## Roadmap
 - [x] 建立基礎專案結構與核心文件。

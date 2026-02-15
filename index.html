@@ -53,6 +53,23 @@
       </section>
 
       <section>
+        <div class="section-head">
+          <h2>研究 / 架構紀錄</h2>
+          <button id="open-builder" class="btn-primary" type="button">+ 新增紀錄（半自動）</button>
+        </div>
+        <p class="hint">可使用下方模板直接貼上內容，或按「新增紀錄」以選項式填寫。</p>
+
+        <h3>可複製模板（Markdown）</h3>
+        <textarea id="entry-template" class="template-box" readonly></textarea>
+        <div class="actions-inline">
+          <button id="copy-template" class="btn-secondary" type="button">複製模板</button>
+          <span id="copy-state" class="copy-state" aria-live="polite"></span>
+        </div>
+
+        <div id="entry-list" class="entry-list"></div>
+      </section>
+
+      <section>
         <h2>聯絡方式</h2>
         <ul class="contact">
           <li>Email：alex.portfolio@example.com</li>
@@ -61,6 +78,54 @@
         </ul>
       </section>
     </main>
+
+    <dialog id="entry-builder" class="builder-dialog">
+      <form id="entry-form" method="dialog" class="builder-form">
+        <header>
+          <h3>新增研究 / 架構紀錄</h3>
+          <p>依序選擇與填寫，送出後會自動加到首頁。</p>
+        </header>
+
+        <label>
+          類型
+          <select name="type" required>
+            <option value="研究">研究</option>
+            <option value="架構">架構</option>
+            <option value="實驗">實驗</option>
+          </select>
+        </label>
+
+        <label>
+          標題
+          <input name="title" type="text" placeholder="例如：多租戶系統授權模型" required />
+        </label>
+
+        <label>
+          背景 / 問題
+          <textarea name="problem" rows="3" required></textarea>
+        </label>
+
+        <label>
+          核心決策（可條列）
+          <textarea name="decision" rows="3" required></textarea>
+        </label>
+
+        <label>
+          技術標籤（逗號分隔）
+          <input name="tags" type="text" placeholder="DDD, RBAC, PostgreSQL" />
+        </label>
+
+        <label>
+          連結（選填）
+          <input name="link" type="url" placeholder="https://..." />
+        </label>
+
+        <menu>
+          <button type="button" value="cancel" id="cancel-builder">取消</button>
+          <button type="submit" value="default" class="btn-primary">加入首頁</button>
+        </menu>
+      </form>
+    </dialog>
 
     <footer>
       <small>© <span id="year"></span> Alex Portfolio</small>
